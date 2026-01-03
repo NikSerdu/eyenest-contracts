@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package user.v1;
+
+
+service UserService {
+	rpc getByEmail(GetByEmailRequest) returns (GetByEmailResponse);
+
+}
+
+message GetByEmailRequest {
+	string email = 1;
+	string password = 2;
+}
+
+message GetByEmailResponse {
+	string id = 1;
+	string email = 2;
+	string password = 3;
+	string created_at = 4;
+	string updated_at = 5;
+}
