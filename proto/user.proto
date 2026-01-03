@@ -10,7 +10,6 @@ service UserService {
 
 message GetByEmailRequest {
 	string email = 1;
-	string password = 2;
 }
 
 message GetByEmailResponse {
