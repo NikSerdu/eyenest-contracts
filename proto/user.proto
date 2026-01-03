@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package user.v1;
-
+import "google/protobuf/timestamp.proto";
 
 service UserService {
 	rpc getByEmail(GetByEmailRequest) returns (GetByEmailResponse);
@@ -16,6 +16,6 @@ message GetByEmailResponse {
 	string id = 1;
 	string email = 2;
 	string password = 3;
-	string created_at = 4;
-	string updated_at = 5;
+	google.protobuf.Timestamp created_at = 4;
+	google.protobuf.Timestamp updated_at = 5;
 }
