@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package camera.v1;
+
+service CameraService {
+  rpc GetLocationsByUserId (GetLocationsByUserIdRequest)
+      returns (GetLocationsByUserIdResponse);
+}
+
+message GetLocationsByUserIdRequest {
+  string userId = 1;
+}
+
+message GetLocationsByUserIdResponse {
+  repeated Location locations = 1;
+}
+
+message Location {
+  string id = 1;
+  string name = 2;
+  string userId = 3;
+  repeated Camera cameras = 4;
+}
+
+message Camera {
+  string id = 1;
+  string name = 2;
+  CameraSettings cameraSettings = 3;
+}
+
+message CameraSettings {
+  string id = 1;
+  Status aiStatus = 2;
+}
+
+enum Status {
+  ON = 0;
+  OFF = 1;
+}
