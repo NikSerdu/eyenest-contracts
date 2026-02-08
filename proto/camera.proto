@@ -5,7 +5,11 @@ package camera.v1;
 service CameraService {
   rpc GetLocationsByUserId (GetLocationsByUserIdRequest)
       returns (GetLocationsByUserIdResponse);
+  rpc CreateLocation (CreateLocationRequest)
+      returns (Location);
 }
+
+
 
 message GetLocationsByUserIdRequest {
   string userId = 1;
@@ -13,6 +17,11 @@ message GetLocationsByUserIdRequest {
 
 message GetLocationsByUserIdResponse {
   repeated Location locations = 1;
+}
+
+message CreateLocationRequest {
+  string userId = 1;
+  string name = 2;
 }
 
 message Location {
