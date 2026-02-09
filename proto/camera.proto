@@ -7,9 +7,18 @@ service CameraService {
       returns (GetLocationsByUserIdResponse);
   rpc CreateLocation (CreateLocationRequest)
       returns (Location);
+  rpc AddCamera (AddCameraRequest) returns (AddCameraResponse);
 }
 
+message AddCameraRequest {
+  string name = 1;
+  string locationId = 2;
+  string userId = 3;
+}
 
+message AddCameraResponse {
+  string token = 1;
+}
 
 message GetLocationsByUserIdRequest {
   string userId = 1;
