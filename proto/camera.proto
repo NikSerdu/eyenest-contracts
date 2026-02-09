@@ -8,6 +8,16 @@ service CameraService {
   rpc CreateLocation (CreateLocationRequest)
       returns (Location);
   rpc AddCamera (AddCameraRequest) returns (AddCameraResponse);
+  rpc LinkCamera (LinkCameraRequest) returns (LinkCameraResponse);
+}
+
+message LinkCameraRequest {
+  string token = 1;
+}
+
+message LinkCameraResponse {
+  string accessToken = 1;
+  string refreshToken = 2;
 }
 
 message AddCameraRequest {
