@@ -9,6 +9,26 @@ service CameraService {
       returns (Location);
   rpc AddCamera (AddCameraRequest) returns (AddCameraResponse);
   rpc LinkCamera (LinkCameraRequest) returns (LinkCameraResponse);
+  rpc GetLiveKitViewerToken (GetLiveKitViewerTokenRequest) returns (GetLiveKitViewerTokenResponse);
+  rpc GetLiveKitCameraToken (GetLiveKitCameraTokenRequest) returns (GetLiveKitCameraTokenResponse);
+}
+
+message GetLiveKitCameraTokenRequest {
+  string cameraId = 1;
+  string roomId = 2;
+}
+
+message GetLiveKitCameraTokenResponse {
+  string token = 1;
+}
+
+message GetLiveKitViewerTokenRequest {
+  string userId = 1;
+  string roomId = 2;
+}
+
+message GetLiveKitViewerTokenResponse {
+  string token = 1;
 }
 
 message LinkCameraRequest {
