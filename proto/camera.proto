@@ -13,6 +13,15 @@ service CameraService {
   rpc GetLiveKitViewerToken (GetLiveKitViewerTokenRequest) returns (GetLiveKitViewerTokenResponse);
   rpc GetLiveKitCameraToken (GetLiveKitCameraTokenRequest) returns (GetLiveKitCameraTokenResponse);
   rpc GetLinkCameraToken(GetLinkCameraTokenRequest) returns (GetLinkCameraTokenResponse);
+  rpc GetCameraUserIdByCameraId(GetCameraUserIdByCameraIdRequest) returns (GetCameraUserIdByCameraIdResponse);
+}
+
+message GetCameraUserIdByCameraIdRequest {
+  string cameraId = 1; 
+}
+
+message GetCameraUserIdByCameraIdResponse {
+  string userId = 1;
 }
 
 message GetLinkCameraTokenRequest {
