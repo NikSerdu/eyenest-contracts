@@ -4,11 +4,18 @@ package video.v1;
 
 service VideoService {
   rpc StartRecording (StartRecordingRequest) returns (StartRecordingResponse);
+  rpc StopRecording (StopRecordingRequest) returns (StopRecordingResponse);
 }
 
 message StartRecordingRequest {
   string roomId = 1;
 }
 message StartRecordingResponse {
+  string egressId = 1;
+}
+message StopRecordingRequest {
+  string roomId = 1;
+}
+message StopRecordingResponse {
   string egressId = 1;
 }
