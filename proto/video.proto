@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package video.v1;
+
+service VideoService {
+  rpc StartRecording (StartRecordingRequest) returns (StartRecordingResponse);
+}
+
+message StartRecordingRequest {
+  string roomId = 1;
+}
+message StartRecordingResponse {
+  string egressId = 1;
+}
