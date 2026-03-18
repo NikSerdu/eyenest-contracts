@@ -5,6 +5,15 @@ package video.v1;
 service VideoService {
   rpc StartRecording (StartRecordingRequest) returns (StartRecordingResponse);
   rpc StopRecording (StopRecordingRequest) returns (StopRecordingResponse);
+  rpc GetAllRecordings (GetAllRecordingsRequest) returns (GetAllRecordingsResponse);
+  rpc GetPresignedUrl (GetPresignedUrlRequest) returns (GetPresignedUrlResponse);
+}
+
+message GetPresignedUrlRequest {
+  string id = 1;
+}
+message GetPresignedUrlResponse {
+  string url = 1;
 }
 
 message StartRecordingRequest {
@@ -18,4 +27,22 @@ message StopRecordingRequest {
 }
 message StopRecordingResponse {
   string egressId = 1;
+}
+message GetAllRecordingsRequest {
+  string roomId = 1;
+}
+message GetAllRecordingsResponse {
+  repeated Recording recording = 1;
+}
+message Recording {
+  string id = 1;  
+  string playlistName = 2;
+  VideoFileStatus status = 3;
+  string createdAt = 4;
+  string updatedAt = 5;
+  string finishedAt = 6;
+}
+enum VideoFileStatus {
+  RECORDING = 0;
+  FINISHED = 1;
 }
