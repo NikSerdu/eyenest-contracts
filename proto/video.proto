@@ -11,6 +11,7 @@ service VideoService {
 
 message GetPresignedUrlRequest {
   string fileId = 1;
+  string cameraId = 2;
 }
 message GetPresignedUrlResponse {
   string url = 1;
