@@ -10,7 +10,7 @@ service VideoService {
 }
 
 message GetPresignedUrlRequest {
-  string id = 1;
+  string fileId = 1;
 }
 message GetPresignedUrlResponse {
   string url = 1;
