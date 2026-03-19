@@ -15,6 +15,15 @@ service CameraService {
   rpc GetLinkCameraToken(GetLinkCameraTokenRequest) returns (GetLinkCameraTokenResponse);
   rpc GetCameraUserIdByCameraId(GetCameraUserIdByCameraIdRequest) returns (GetCameraUserIdByCameraIdResponse);
   rpc UpdateCameraSettings(UpdateCameraSettingsRequest) returns (UpdateCameraSettingsResponse);
+  rpc GetCameraById(GetCameraByIdRequest) returns (GetCameraByIdResponse);
+}
+
+message GetCameraByIdRequest {
+  string cameraId = 1;
+}
+
+message GetCameraByIdResponse {
+  Camera camera = 1;
 }
 
 message UpdateCameraSettingsRequest {
@@ -112,7 +121,8 @@ message Location {
 message Camera {
   string id = 1;
   string name = 2;
-  CameraSettings cameraSettings = 3;
+  string locationId = 3;
+  CameraSettings cameraSettings = 4;
 }
 
 message CameraSettings {
