@@ -14,6 +14,17 @@ service CameraService {
   rpc GetLiveKitCameraToken (GetLiveKitCameraTokenRequest) returns (GetLiveKitCameraTokenResponse);
   rpc GetLinkCameraToken(GetLinkCameraTokenRequest) returns (GetLinkCameraTokenResponse);
   rpc GetCameraUserIdByCameraId(GetCameraUserIdByCameraIdRequest) returns (GetCameraUserIdByCameraIdResponse);
+  rpc UpdateCameraSettings(UpdateCameraSettingsRequest) returns (UpdateCameraSettingsResponse);
+}
+
+message UpdateCameraSettingsRequest {
+  string cameraId = 1;
+  string aiStatus = 2;
+  string recordingStatus = 3;
+}
+
+message UpdateCameraSettingsResponse {
+  CameraSettings cameraSettings = 1;
 }
 
 message GetCameraUserIdByCameraIdRequest {
@@ -106,7 +117,8 @@ message Camera {
 
 message CameraSettings {
   string id = 1;
-  Status aiStatus = 2;
+  string aiStatus = 2;
+  string recordingStatus = 3;
 }
 
 enum Status {
