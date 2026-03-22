@@ -12,7 +12,7 @@ service VideoService {
 
 message DeleteRecordingRequest {
   string recordingId = 1;
-  string cameraId = 2;
+  string userId = 2;
 }
 message DeleteRecordingResponse {
   Recording recording = 1;
