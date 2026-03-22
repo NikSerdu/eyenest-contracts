@@ -29,6 +29,7 @@ message DeleteCameraResponse {
 
 message DeleteLocationRequest {
   string locationId = 1;
+  string userId = 2;
 }
 message DeleteLocationResponse {
   Location location = 1;
