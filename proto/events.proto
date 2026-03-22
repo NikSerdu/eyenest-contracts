@@ -3,7 +3,7 @@ syntax = "proto3";
 package events.v1;
 
 service EventsService {
-  rpc getEventsByCameraId (GetEventsByCameraIdRequest) returns (GetEventsByCameraIdResponse);
+  rpc GetEventsByCameraId (GetEventsByCameraIdRequest) returns (GetEventsByCameraIdResponse);
 }
 
 message GetEventsByCameraIdRequest {
