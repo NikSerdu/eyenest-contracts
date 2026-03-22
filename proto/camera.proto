@@ -7,7 +7,9 @@ service CameraService {
       returns (GetLocationsByUserIdResponse);
   rpc CreateLocation (CreateLocationRequest)
       returns (Location);
+  rpc DeleteLocation (DeleteLocationRequest) returns (DeleteLocationResponse);
   rpc AddCamera (AddCameraRequest) returns (AddCameraResponse);
+  rpc DeleteCamera (DeleteCameraRequest) returns (DeleteCameraResponse);
   rpc LinkCamera (LinkCameraRequest) returns (LinkCameraResponse);
   rpc Refresh (RefreshRequest) returns (RefreshResponse);
   rpc GetLiveKitViewerToken (GetLiveKitViewerTokenRequest) returns (GetLiveKitViewerTokenResponse);
@@ -16,6 +18,20 @@ service CameraService {
   rpc GetCameraUserIdByCameraId(GetCameraUserIdByCameraIdRequest) returns (GetCameraUserIdByCameraIdResponse);
   rpc UpdateCameraSettings(UpdateCameraSettingsRequest) returns (UpdateCameraSettingsResponse);
   rpc GetCameraById(GetCameraByIdRequest) returns (GetCameraByIdResponse);
+}
+
+message DeleteCameraRequest {
+  string cameraId = 1;
+}
+message DeleteCameraResponse {
+  Camera camera = 1;
+}
+
+message DeleteLocationRequest {
+  string locationId = 1;
+}
+message DeleteLocationResponse {
+  Location location = 1;
 }
 
 message GetCameraByIdRequest {
@@ -129,9 +145,4 @@ message CameraSettings {
   string id = 1;
   string aiStatus = 2;
   string recordingStatus = 3;
-}
-
-enum Status {
-  ON = 0;
-  OFF = 1;
 }
