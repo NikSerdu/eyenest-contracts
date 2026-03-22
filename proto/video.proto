@@ -6,7 +6,15 @@ service VideoService {
   rpc StartRecording (StartRecordingRequest) returns (StartRecordingResponse);
   rpc StopRecording (StopRecordingRequest) returns (StopRecordingResponse);
   rpc GetAllRecordings (GetAllRecordingsRequest) returns (GetAllRecordingsResponse);
+  rpc DeleteRecording (DeleteRecordingRequest) returns (DeleteRecordingResponse);
   rpc GetPresignedUrl (GetPresignedUrlRequest) returns (GetPresignedUrlResponse);
+}
+
+message DeleteRecordingRequest {
+  string recordingId = 1;
+}
+message DeleteRecordingResponse {
+  Recording recording = 1;
 }
 
 message GetPresignedUrlRequest {
