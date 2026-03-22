@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package events.v1;
+
+service EventsService {
+  rpc getEventsByCameraId (GetEventsByCameraIdRequest) returns (GetEventsByCameraIdResponse);
+}
+
+message GetEventsByCameraIdRequest {
+  string cameraId = 1;
+}
+
+message GetEventsByCameraIdResponse {
+  repeated Event events = 1;
+}
+
+message Event {
+  string id = 1;
+  string cameraId = 2;
+  string userId = 3;
+  string eventType = 4;
+  string createdAt = 5;
+}
