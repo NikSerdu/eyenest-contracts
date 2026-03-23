@@ -24,9 +24,9 @@ message GetUserNotificationSettingsResponse {
 
 message UpdateUserNotificationSettingsRequest {
 	string userId = 1;
-	bool telegramEnabled = 2;
-	string telegramChatId = 3;
-	bool emailEnabled = 4;
+	optional bool telegramEnabled = 2;
+	optional string telegramChatId = 3;
+	optional bool emailEnabled = 4;
 }
 
 message UpdateUserNotificationSettingsResponse {
