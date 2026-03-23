@@ -5,4 +5,5 @@ export const PROTO_PATHS = {
 	CAMERA: join(__dirname, '../../proto/camera.proto'),
 	VIDEO: join(__dirname, '../../proto/video.proto'),
 	EVENTS: join(__dirname, '../../proto/events.proto'),
+	NOTIFICATIONS: join(__dirname, '../../proto/notifications.proto'),
 } as const

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package notifications.v1;
+
+service NotificationsService {
+  rpc GetLinkToken (LinkTokenRequest) returns (LinkTokenResponse);
+}
+
+message LinkTokenRequest {
+  string userId = 1;
+}
+
+message LinkTokenResponse {
+  string token = 1;
+}
+
