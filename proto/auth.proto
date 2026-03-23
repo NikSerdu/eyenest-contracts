@@ -8,6 +8,17 @@ service AuthService {
 	rpc login (LoginRequest) returns (LoginResponse);
 	rpc refresh (RefreshRequest) returns (RefreshResponse);
 	rpc getUserById (GetUserByIdRequest) returns (GetUserByIdResponse);
+	rpc getUserNotificationSettings (GetUserNotificationSettingsRequest) returns (GetUserNotificationSettingsResponse);
+}
+
+message GetUserNotificationSettingsRequest {
+	string userId = 1;
+}
+
+message GetUserNotificationSettingsResponse {
+	bool telegramEnabled = 1;
+	string telegramChatId = 2;
+	bool emailEnabled = 3;
 }
 
 message RegisterRequest {
