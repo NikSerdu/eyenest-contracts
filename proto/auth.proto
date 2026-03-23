@@ -34,7 +34,7 @@ message UpdateUserNotificationSettingsResponse {
 	string telegramChatId = 2;
 	bool emailEnabled = 3;
 }
-}
+
 
 message RegisterRequest {
 	string email = 1;
