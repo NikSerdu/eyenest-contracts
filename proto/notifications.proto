@@ -16,7 +16,7 @@ message LinkTokenResponse {
 }
 
 message UnlinkTelegramAccountRequest {
-  optionalstring userId = 1;
+  optional string userId = 1;
   optional string telegramChatId = 2;
 }
 
