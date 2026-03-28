@@ -4,6 +4,7 @@ package notifications.v1;
 
 service NotificationsService {
   rpc GetLinkToken (LinkTokenRequest) returns (LinkTokenResponse);
+  rpc UnlinkTelegramAccount (UnlinkTelegramAccountRequest) returns (UnlinkTelegramAccountResponse);
 }
 
 message LinkTokenRequest {
@@ -14,3 +15,11 @@ message LinkTokenResponse {
   string token = 1;
 }
 
+message UnlinkTelegramAccountRequest {
+  optionalstring userId = 1;
+  optional string telegramChatId = 2;
+}
+
+message UnlinkTelegramAccountResponse {
+  bool success = 1;
+}

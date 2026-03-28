@@ -10,6 +10,17 @@ service AuthService {
 	rpc getUserById (GetUserByIdRequest) returns (GetUserByIdResponse);
 	rpc getUserNotificationSettings (GetUserNotificationSettingsRequest) returns (GetUserNotificationSettingsResponse);
 	rpc updateUserNotificationSettings (UpdateUserNotificationSettingsRequest) returns (UpdateUserNotificationSettingsResponse);
+	rpc getUserIdByTelegramChatId (GetUserIdByTelegramChatIdRequest) returns (GetUserIdByTelegramChatIdResponse);
+}
+
+
+
+message GetUserIdByTelegramChatIdRequest {
+	string telegramChatId = 1;
+}
+
+message GetUserIdByTelegramChatIdResponse {
+	string userId = 1;
 }
 
 message GetUserNotificationSettingsRequest {
