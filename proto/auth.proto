@@ -54,8 +54,7 @@ message RegisterRequest {
 }
 
 message RegisterResponse {
-	string accessToken = 1;
-	string refreshToken = 2;
+	bool success = 1;
 }
 
 message LoginRequest {
