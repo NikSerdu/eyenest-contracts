@@ -5,6 +5,18 @@ package notifications.v1;
 service NotificationsService {
   rpc GetLinkToken (LinkTokenRequest) returns (LinkTokenResponse);
   rpc UnlinkTelegramAccount (UnlinkTelegramAccountRequest) returns (UnlinkTelegramAccountResponse);
+  rpc SendEmail (SendEmailRequest) returns (SendEmailResponse);
+}
+
+message SendEmailRequest {
+  string email = 1;
+  string subject = 2;
+  optional string text = 3;
+  optional string html = 4;
+}
+
+message SendEmailResponse {
+  bool success = 1;
 }
 
 message LinkTokenRequest {
