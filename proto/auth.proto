@@ -11,6 +11,7 @@ service AuthService {
 	rpc getUserNotificationSettings (GetUserNotificationSettingsRequest) returns (GetUserNotificationSettingsResponse);
 	rpc updateUserNotificationSettings (UpdateUserNotificationSettingsRequest) returns (UpdateUserNotificationSettingsResponse);
 	rpc getUserIdByTelegramChatId (GetUserIdByTelegramChatIdRequest) returns (GetUserIdByTelegramChatIdResponse);
+	rpc checkOtpCode (CheckOtpCodeRequest) returns (CheckOtpCodeResponse);
 }
 
 
@@ -63,8 +64,7 @@ message LoginRequest {
 }
 
 message LoginResponse {
-	string accessToken = 1;
-	string refreshToken = 2;
+	bool success = 1;
 }
 
 message RefreshRequest {
@@ -85,4 +85,13 @@ message GetUserByIdResponse {
 	string email = 2;
 }
 
+
+message CheckOtpCodeRequest {
+	string code = 1;
+}
+
+message CheckOtpCodeResponse {
+	string accessToken = 1;
+	string refreshToken = 2;
+}
 
